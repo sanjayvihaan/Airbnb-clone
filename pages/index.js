@@ -5,6 +5,8 @@ import Header from '../components/Header'
 import LargeCard from '../components/LargeCard';
 import MediumCard from '../components/MediumCard';
 import SmallCard from '../components/SmallCard';
+import DiscoverCard from '../components/DiscoverCard';
+import {discoverData} from "../constants/cardData"
 
 export default function Home({ exploreData, cardsData }) {
   return (
@@ -35,7 +37,7 @@ export default function Home({ exploreData, cardsData }) {
       <section>
         <h2 className="text-4x; font-semibold py-8">Live Anywhere</h2>
         <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
-          {cardsData?.map(({ img, title }) =>(
+          {cardsData.map(({ img, title }) =>(
             <MediumCard 
             key={img} 
             img={img} 
@@ -43,6 +45,21 @@ export default function Home({ exploreData, cardsData }) {
             />
           ))}
         </div>
+        {/* <section>
+          <h2 className="text-3xl font-bold pb-5 py-8">
+            Discover things to do
+          </h2>
+          <div className="flex overflow-scroll scrollbar-hide p-3 space-x-9">
+            {discoverData.map(({ image, title, desc }) => (
+              <DiscoverCard
+                image={image}
+                title={title}
+                desc={desc}
+                key={image}
+              />
+            ))}
+          </div>
+        </section> */}
       </section>
       <LargeCard 
         img="https://links.papareact.com/4cj"
